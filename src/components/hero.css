@@ -1,0 +1,38 @@
+.hero-wrapper {
+    padding-left: 20px;
+    padding-top: 86px;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 {
+    margin-top: 220px;
+}
+
+#washing {
+    width: 450px; 
+  height: 293px;
+  border-radius: 147px 147px 147px 147px; 
+}
+
+#cleaning {
+    width: 439px; 
+  height: 293px; 
+  border-radius: 147px 0px 0px 147px;
+}
+
+#food {
+    width: 439px; 
+  height: 293px; 
+  border-radius: 0px 147px 147px 0px;
+}
+
+#firstimgs {
+    display: flex;
+    justify-content: center;
+}
+
+/* #whitespace {
+     width: 439px; 
+  height: 293px; 
+} */

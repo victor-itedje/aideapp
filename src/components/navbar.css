@@ -1,0 +1,291 @@
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3e3ee0ff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0px 1px 30px #999;
+}
+
+.navbar-left {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-center {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.navbar-center .nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.respnavlinks {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-size: 21px;
+}
+
+.respitems {
+  display: none;
+}
+
+.navbar-center .nav-links li {
+  margin-right: 1rem;
+}
+
+.navbar-center .nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-right .cart-icon,
+.navbar-right .user-icon {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.navbar-right .cart-count {
+  background-color: #f44336;
+  color: #fff;
+  border-radius: 50%;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.8rem;
+  position: absolute;
+  top: -0.5rem;
+  right: -1.0rem;
+}
+
+.cart-icon {
+  margin-right: 20px;
+}
+
+.circleuser {
+  width: 27px;
+  height: 27px;
+  border-radius: 100%;
+  background: #9095a0ff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid ghostwhite;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#menu {
+  margin-top: 7px;
+}
+
+#cart {
+  margin-top: 5px;
+}
+
+#signup {
+  width: 20px;
+  border-radius: 100px;
+  background: none;
+  border: none;
+  color: white;
+  margin-top: 3px;
+}
+
+#signupcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+option {
+  background-color: black;
+  font-size: 15px;
+}
+
+#getsup {
+  display: flex;
+  gap: 5px;
+}
+
+/* Drawer styles */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Start off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: ghostwhite;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  border-top-left-radius: 60px;
+  border-bottom-left-radius: 60px;
+}
+
+.drawer .nav-links li {
+  color: white;
+}
+
+.drawer.open {
+  right: 0; /* Move into view */
+}
+
+.drawer-content {
+  padding: 20px;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.drawer-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+a {
+  text-decoration: none;
+}
+
+.draweritems {
+  color: black;
+}
+
+#line {
+  width: 100%;
+  height: 1px;
+  border: 2px solid gray;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar-center {
+    display: none;
+  }
+
+  .navbar-left {
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .navbar-right {
+    display: flex;
+    gap: 10px;
+  }
+
+  .respnavlinks {
+    font-size: 16px;
+    gap: 7px;
+  }
+
+  /* .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .navbar-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+  } */
+
+  .drawer .nav-links {
+    flex-direction: column;
+  }
+
+  .drawer .nav-links li {
+    margin: 10px 0;
+    /* text-align: center; */
+  }
+
+  .drawer {
+    width: 270px;
+  }
+
+  .respitems {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+  }
+}
+
+@media (max-width: 500px) {
+  #header1, #header2 {
+  
+    display: none;
+  }
+
+  .cart-icon {
+    margin-right: 0;
+  }
+
+  select {
+    display: none;
+  }
+
+  .drawer {
+    width: 250px;
+  }
+}
