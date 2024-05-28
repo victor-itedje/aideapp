@@ -49,6 +49,21 @@ code {
   /* flex-direction: row; */
 } 
 
+/* #catheader {
+  text-align: right;
+} */
+
+.headerscat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h4:hover {
+  cursor: pointer;
+  text-decoration: overline;
+}
+
 @media (max-width: 768px) {
 .cardrows {
   flex-direction: column;
