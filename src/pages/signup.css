@@ -150,7 +150,7 @@ button:disabled {
 
 .joinus {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 .joinus img {
@@ -314,4 +314,9 @@ input[type= "checkbox"] {
 
 .userreturn {
   text-align: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
 }

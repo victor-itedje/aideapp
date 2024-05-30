@@ -163,10 +163,9 @@ const SignUp = () => {
           </div>
         </div>
         <div className="right-column">
-          <img src="./man-animation.gif" alt="" />
           <div className="joinus">
-            <p className="headers">Come join us</p>
             <img src="./stroke.svg" width={110} height={25} alt="" />
+            <p className="headers">Come join us</p>
           </div>
           <div className="joinuspar">
             <div className="joinuspars">

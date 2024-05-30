@@ -59,6 +59,10 @@ code {
   justify-content: space-between;
 }
 
+h4 {
+    display: none;
+}
+
 h4:hover {
   cursor: pointer;
   text-decoration: overline;
@@ -67,6 +71,7 @@ h4:hover {
 @media (max-width: 768px) {
 .cardrows {
   flex-direction: column;
+
 }
 
 

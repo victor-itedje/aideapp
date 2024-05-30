@@ -1,6 +1,8 @@
 import "./navbar.css";
 import { useState, useEffect } from "react";
 import MaterialUISwitch from "./switch";
+import SearchAppBar from "./searchbar";
+import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
   const [category, setCategory] = useState("");
@@ -40,9 +42,9 @@ const NavigationBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <a href="/" className="logo">
+        <Link to="/" className="logo">
           <img src="./aide-logo.png" alt="Logo" />
-        </a>
+        </Link>
         <div id="signupcon">
           <p className="headers" id="header1">
             <b>SIGN UP</b>
@@ -67,28 +69,28 @@ const NavigationBar = () => {
       <div className="navbar-center">
         <ul className="nav-links">
           <li>
-            <a className="headers" href="/products">
+            <Link className="headers" to="/products">
               <b>Explore</b>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="headers" href="/about">
+            <Link className="headers" to="/about">
               <b>How it works</b>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="headers" href="/contact">
+            <Link className="headers" to="/contact">
               <b>Vendors</b>
-            </a>
+            </Link>
           </li>
           <li>
-            <a className="headers" href="/about">
+            <Link className="headers" to="/about">
               <b>About Us</b>
-            </a>
+            </Link>
           </li>
           <li>
             <div>
-              <a className="headers" id="getsup" href="/contact">
+              <Link className="headers" id="getsup" to="/contact">
                 <b>Get support</b>
                 <img
                   src="./telephone.png"
@@ -96,13 +98,14 @@ const NavigationBar = () => {
                   height={17}
                   alt="Telephone"
                 />
-              </a>
+              </Link>
             </div>
           </li>
         </ul>
       </div>
+      <SearchAppBar />
       <div className="navbar-right">
-        <a href="/cart" className="cart-icon">
+        <Link to="/cart" className="cart-icon">
           <img
             id="cart"
             src="./shopping-cart.png"
@@ -111,24 +114,24 @@ const NavigationBar = () => {
             alt="Cart"
           />
           <span className="cart-count">0</span>
-        </a>
-        <a href="/account" className="user-icon">
+        </Link>
+        <Link to="/account" className="user-icon">
           <div className="circleuser">
             <p className="headers">
               <b>V</b>
             </p>
           </div>
-        </a>
+        </Link>
         <MaterialUISwitch />
-        <a href="#" onClick={toggleDrawer}>
+        <div onClick={toggleDrawer}>
           <img
-            id="menu"
+            id="menubtn"
             src="./categories.png"
             width={27}
             height={27}
             alt="Menu"
           />
-        </a>
+        </div>
       </div>
       <div
         className={`overlay ${drawerOpen ? "active" : ""}`}
@@ -147,68 +150,68 @@ const NavigationBar = () => {
           </div>
           <ul className="nav-links respnavlinks">
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Orders</b>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Notification</b>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Account settings</b>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Switch account type</b>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Favorites</b>
-              </a>
+              </Link>
             </li>
 
             <li>
-              <a className="headers draweritems " href="/products">
+              <Link className="headers draweritems" to="/products">
                 <b>Todays scheduled</b>
-              </a>
+              </Link>
             </li>
-            <div id="line" ></div>
+            <div id="line"></div>
             <div className="respitems">
               <li>
-                <a className="headers draweritems " href="/products">
+                <Link className="headers draweritems" to="/products">
                   <b>Explore</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="headers draweritems" href="/about">
+                <Link className="headers draweritems" to="/about">
                   <b>How it works</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="headers draweritems" href="/contact">
+                <Link className="headers draweritems" to="/contact">
                   <b>Vendors</b>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className="headers draweritems" href="/about">
+                <Link className="headers draweritems" to="/about">
                   <b>About Us</b>
-                </a>
+                </Link>
               </li>
               <li>
                 <div>
-                  <a
+                  <Link
                     className="headers draweritems"
                     id="getsup"
-                    href="/contact"
+                    to="/contact"
                   >
                     <b>Get support</b>
                     <img
@@ -217,7 +220,7 @@ const NavigationBar = () => {
                       height={17}
                       alt="Telephone"
                     />
-                  </a>
+                  </Link>
                 </div>
               </li>
             </div>

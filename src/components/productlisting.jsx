@@ -8,8 +8,86 @@ import Chip from "@mui/joy/Chip";
 import Link from "@mui/joy/Link";
 import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import Skeleton from "@mui/material/Skeleton";
+import Box from "@mui/material/Box";
 
 export default function ProductCard() {
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // simulate a 2 second loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const renderCard = (imgSrc, title, linkText, price, stock) => (
+    <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
+      <CardOverflow>
+        <AspectRatio sx={{ minWidth: 200 }}>
+          {loading ? (
+            <Skeleton variant="rectangular" width="100%" height="100%" />
+          ) : (
+            <img src={imgSrc} loading="lazy" alt={linkText} />
+          )}
+        </AspectRatio>
+      </CardOverflow>
+      <CardContent>
+        {loading ? (
+          <Skeleton variant="text" width="40%" />
+        ) : (
+          <Typography level="body-xs">{title}</Typography>
+        )}
+        {loading ? (
+          <Skeleton variant="text" width="60%" />
+        ) : (
+          <Link
+            href="#product-card"
+            fontWeight="md"
+            color="neutral"
+            textColor="text.primary"
+            overlay
+            endDecorator={<ArrowOutwardIcon />}
+          >
+            {linkText}
+          </Link>
+        )}
+        {loading ? (
+          <Skeleton variant="text" width="30%" />
+        ) : (
+          <Typography
+            level="title-lg"
+            sx={{ mt: 1, fontWeight: "xl" }}
+            endDecorator={
+              <Chip component="span" size="sm" variant="soft" color="success">
+                Lowest price
+              </Chip>
+            }
+          >
+            {price}
+          </Typography>
+        )}
+        {loading ? (
+          <Skeleton variant="text" width="50%" />
+        ) : (
+          <Typography level="body-sm">
+            (Only <b>{stock}</b> left in stock!)
+          </Typography>
+        )}
+      </CardContent>
+      <CardOverflow>
+        {loading ? (
+          <Skeleton variant="rectangular" width="100%" height={40} />
+        ) : (
+          <Button id="cardbtn" variant="solid" size="sl">
+            View providers
+          </Button>
+        )}
+      </CardOverflow>
+    </Card>
+  );
+
   return (
     <div id="cards">
       <div className="categories">
@@ -20,441 +98,75 @@ export default function ProductCard() {
           <h4 className="body-par">see more &#128073; </h4>
         </div>
         <div className="cardrows">
-          <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-            <CardOverflow>
-              <AspectRatio sx={{ minWidth: 200 }}>
-                <img src="./catering.jpg" loading="lazy" alt="" />
-              </AspectRatio>
-            </CardOverflow>
-            <CardContent>
-              <Typography level="body-xs">Bluetooth Headset</Typography>
-              <Link
-                href="#product-card"
-                fontWeight="md"
-                color="neutral"
-                textColor="text.primary"
-                overlay
-                endDecorator={<ArrowOutwardIcon />}
-              >
-                Catering
-              </Link>
-
-              <Typography
-                level="title-lg"
-                sx={{ mt: 1, fontWeight: "xl" }}
-                endDecorator={
-                  <Chip
-                    component="span"
-                    size="sm"
-                    variant="soft"
-                    color="success"
-                  >
-                    Lowest price
-                  </Chip>
-                }
-              >
-                2,900 THB
-              </Typography>
-              <Typography level="body-sm">
-                (Only <b>7</b> Vendors!)
-              </Typography>
-            </CardContent>
-            <CardOverflow>
-              <Button id="cardbtn" variant="solid" size="sl">
-                View providers
-              </Button>
-              {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-            </CardOverflow>
-          </Card>
-          <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-            <CardOverflow>
-              <AspectRatio sx={{ minWidth: 200 }}>
-                <img src="./laundry.jpg" loading="lazy" alt="" />
-              </AspectRatio>
-            </CardOverflow>
-            <CardContent>
-              <Typography level="body-xs">Bluetooth Headset</Typography>
-              <Link
-                href="#product-card"
-                fontWeight="md"
-                color="neutral"
-                textColor="text.primary"
-                overlay
-                endDecorator={<ArrowOutwardIcon />}
-              >
-                Laundry
-              </Link>
-
-              <Typography
-                level="title-lg"
-                sx={{ mt: 1, fontWeight: "xl" }}
-                endDecorator={
-                  <Chip
-                    component="span"
-                    size="sm"
-                    variant="soft"
-                    color="success"
-                  >
-                    Lowest price
-                  </Chip>
-                }
-              >
-                2,900 THB
-              </Typography>
-              <Typography level="body-sm">
-                (Only <b>7</b> left in stock!)
-              </Typography>
-            </CardContent>
-            <CardOverflow>
-              <Button id="cardbtn" variant="solid" size="sl">
-                View providers
-              </Button>
-              {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-            </CardOverflow>
-          </Card>
-          <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-            <CardOverflow>
-              <AspectRatio sx={{ minWidth: 200 }}>
-                <img src="./cleaningcard.jpg" loading="lazy" alt="cleaning" />
-              </AspectRatio>
-            </CardOverflow>
-            <CardContent>
-              <Typography level="body-xs">Bluetooth Headset</Typography>
-              <Link
-                href="#product-card"
-                fontWeight="md"
-                color="neutral"
-                textColor="text.primary"
-                overlay
-                endDecorator={<ArrowOutwardIcon />}
-              >
-                Cleaning
-              </Link>
-
-              <Typography
-                level="title-lg"
-                sx={{ mt: 1, fontWeight: "xl" }}
-                endDecorator={
-                  <Chip
-                    component="span"
-                    size="sm"
-                    variant="soft"
-                    color="success"
-                  >
-                    Lowest price
-                  </Chip>
-                }
-              >
-                2,900 THB
-              </Typography>
-              <Typography level="body-sm">
-                (Only <b>7</b> left in stock!)
-              </Typography>
-            </CardContent>
-            <CardOverflow>
-              <Button id="cardbtn" variant="solid" size="sl">
-                View providers
-              </Button>
-              {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-            </CardOverflow>
-          </Card>
+          {renderCard(
+            "./catering.jpg",
+            "Bluetooth Headset",
+            "Catering",
+            "2,900 THB",
+            7
+          )}
+          {renderCard(
+            "./laundry.jpg",
+            "Bluetooth Headset",
+            "Laundry",
+            "2,900 THB",
+            7
+          )}
+          {renderCard(
+            "./cleaningcard.jpg",
+            "Bluetooth Headset",
+            "Cleaning",
+            "2,900 THB",
+            7
+          )}
         </div>
       </div>
 
       <div className="cardrows">
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="./massage.jpg"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Massage
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="./handy.jpg"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Handy man
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="./beauty.jpg"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Beauty technician
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
+        {renderCard(
+          "./massage.jpg",
+          "Bluetooth Headset",
+          "Massage",
+          "2,900 THB",
+          7
+        )}
+        {renderCard(
+          "./handy.jpg",
+          "Bluetooth Headset",
+          "Handy man",
+          "2,900 THB",
+          7
+        )}
+        {renderCard(
+          "./beauty.jpg",
+          "Bluetooth Headset",
+          "Beauty technician",
+          "2,900 THB",
+          7
+        )}
       </div>
       <div className="cardrows">
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
-                srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Super Rockez A400
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
-                srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Super Rockez A400
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
-        <Card sx={{ width: 320, maxWidth: "100%", boxShadow: "lg" }}>
-          <CardOverflow>
-            <AspectRatio sx={{ minWidth: 200 }}>
-              <img
-                src="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286"
-                srcSet="https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286&dpr=2 2x"
-                loading="lazy"
-                alt=""
-              />
-            </AspectRatio>
-          </CardOverflow>
-          <CardContent>
-            <Typography level="body-xs">Bluetooth Headset</Typography>
-            <Link
-              href="#product-card"
-              fontWeight="md"
-              color="neutral"
-              textColor="text.primary"
-              overlay
-              endDecorator={<ArrowOutwardIcon />}
-            >
-              Super Rockez A400
-            </Link>
-
-            <Typography
-              level="title-lg"
-              sx={{ mt: 1, fontWeight: "xl" }}
-              endDecorator={
-                <Chip component="span" size="sm" variant="soft" color="success">
-                  Lowest price
-                </Chip>
-              }
-            >
-              2,900 THB
-            </Typography>
-            <Typography level="body-sm">
-              (Only <b>7</b> left in stock!)
-            </Typography>
-          </CardContent>
-          <CardOverflow>
-            <Button id="cardbtn" variant="solid" size="sl">
-              View providers
-            </Button>
-            {/* <Button id="cardbtn" variant="solid">
-          Book Service
-        </Button> */}
-          </CardOverflow>
-        </Card>
+        {renderCard(
+          "https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286",
+          "Bluetooth Headset",
+          "Super Rockez A400",
+          "2,900 THB",
+          7
+        )}
+        {renderCard(
+          "https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286",
+          "Bluetooth Headset",
+          "Super Rockez A400",
+          "2,900 THB",
+          7
+        )}
+        {renderCard(
+          "https://images.unsplash.com/photo-1593121925328-369cc8459c08?auto=format&fit=crop&w=286",
+          "Bluetooth Headset",
+          "Super Rockez A400",
+          "2,900 THB",
+          7
+        )}
       </div>
     </div>
   );

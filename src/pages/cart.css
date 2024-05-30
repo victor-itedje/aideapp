@@ -1,0 +1,25 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f8f8f8;
+}
+
+.cart-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cart-page p {
+  font-size: 1.2rem;
+  color: #777;
+}
+
+#cartimg {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 10px;
+}

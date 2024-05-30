@@ -3,7 +3,7 @@ import "./signup.css";
 import "./signin.css";
 import { useState } from "react";
 
-const SignUpProvider = () => {
+const SignIn = () => {
     const [providerMail, setProviderMail] = useState("")
     const [providerPwd, setProviderPwd] = useState("");
     return (
@@ -88,4 +88,4 @@ const SignUpProvider = () => {
     );
 }
 
-export default SignUpProvider
+export default SignIn
