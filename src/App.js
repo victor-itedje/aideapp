@@ -7,6 +7,7 @@ import ProductSection from "./components/productssection";
 import CartPage from "./pages/cart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import VendorList from "./pages/vendors";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="products" element={<ProductSection />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="vendors" element={<VendorList />} />
             {/* Add other routes as needed */}
           </Route>
         </Routes>

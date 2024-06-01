@@ -5,11 +5,13 @@ import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Chip from "@mui/joy/Chip";
-import Link from "@mui/joy/Link";
+import { Link } from "react-router-dom";
 import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Skeleton from "@mui/material/Skeleton";
-import Box from "@mui/material/Box";
+// import { Link } from "react-router-dom";
+// import Box from "@mui/material/Box";
+// import { Grid } from "@mui/material";
 
 export default function ProductCard() {
   const [loading, setLoading] = React.useState(true);
@@ -42,8 +44,7 @@ export default function ProductCard() {
         {loading ? (
           <Skeleton variant="text" width="60%" />
         ) : (
-          <Link
-            href="#product-card"
+          <p
             fontWeight="md"
             color="neutral"
             textColor="text.primary"
@@ -51,7 +52,7 @@ export default function ProductCard() {
             endDecorator={<ArrowOutwardIcon />}
           >
             {linkText}
-          </Link>
+          </p>
         )}
         {loading ? (
           <Skeleton variant="text" width="30%" />
@@ -80,9 +81,11 @@ export default function ProductCard() {
         {loading ? (
           <Skeleton variant="rectangular" width="100%" height={40} />
         ) : (
-          <Button id="cardbtn" variant="solid" size="sl">
-            View providers
-          </Button>
+          <Link to="/vendors" style={{ textDecoration: "none" }}>
+            <Button id="cardbtn" variant="solid" size="sl">
+              View providers
+            </Button>
+          </Link>
         )}
       </CardOverflow>
     </Card>

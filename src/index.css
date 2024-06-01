@@ -27,6 +27,7 @@ code {
 
 #cardbtn {
   background-color: #3e3ee0ff;
+  width: 320px;
   /* width: 300px;
   margin-top: 10px; */
 }
