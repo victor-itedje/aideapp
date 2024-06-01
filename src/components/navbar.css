@@ -90,6 +90,7 @@
 
 .cart-icon {
   margin-right: 20px;
+   margin-top: 5px;
 }
 
 .circleuser {
@@ -110,9 +111,6 @@
   cursor: pointer;
 }
 
-#cart {
-  margin-top: 5px;
-}
 
 #signup {
   width: 20px;
@@ -231,7 +229,7 @@ a {
 
   .navbar-right {
     display: flex;
-    gap: 10px;
+    gap: 3px;
   }
 
   .respnavlinks {
@@ -283,6 +281,11 @@ a {
     margin-right: 0;
   }
 
+  .navbar-right {
+    gap: 1px;
+  }
+
+
   select {
     display: none;
   }
@@ -290,4 +293,19 @@ a {
   .drawer {
     width: 250px;
   }
+}
+
+
+@media (max-width: 344px) {
+    .cart-icon {
+      margin-right: 4px;
+    }
+
+    #nabar-left {
+      gap: 0px;
+    }
+
+    #navbar-center {
+      gap: 0px;
+    }
 }

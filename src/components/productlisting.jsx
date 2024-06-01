@@ -95,7 +95,7 @@ export default function ProductCard() {
           <h2 className="headers" id="catheader">
             Personal services
           </h2>
-          <h4 className="body-par">see more &#128073; </h4>
+          {/* <h4 className="body-par">see more &#128073; </h4> */}
         </div>
         <div className="cardrows">
           {renderCard(

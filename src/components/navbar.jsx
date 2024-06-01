@@ -122,7 +122,7 @@ const NavigationBar = () => {
             </p>
           </div>
         </Link>
-        <MaterialUISwitch />
+        <MaterialUISwitch id="switchbtn" />
         <div onClick={toggleDrawer}>
           <img
             id="menubtn"
