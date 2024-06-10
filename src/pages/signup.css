@@ -320,3 +320,22 @@ input[type= "checkbox"] {
   display: flex;
   flex-direction: column;
 }
+
+
+@media (max-width: 768px) {
+    .s-usercontainer {
+      flex-direction: column;
+    }
+
+    .f-lname {
+      flex-direction: column;
+    }
+
+    .right-column {
+      display: none;
+    }
+
+    #mail, #country, #number, #address {
+      width: 231px;
+    }
+}

@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import Typography from "@mui/joy/Typography";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Skeleton from "@mui/material/Skeleton";
+import NavigationBar from "./navbar";
 
 export default function ProductCard() {
   const [loading, setLoading] = React.useState(true);
@@ -16,7 +17,7 @@ export default function ProductCard() {
   React.useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -89,6 +90,8 @@ export default function ProductCard() {
   );
 
   return (
+    <>
+    <NavigationBar />
     <div id="cards">
       <div className="categories">
         <div className="headerscat">
@@ -150,5 +153,6 @@ export default function ProductCard() {
         )}
       </div>
     </div>
+    </>
   );
 }

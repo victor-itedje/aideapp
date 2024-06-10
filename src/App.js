@@ -8,6 +8,7 @@ import CartPage from "./pages/cart";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import ServiceProviders from "./pages/vendors";
+import ChooseUserType from "./pages/landingpage";
 
 
 function App() {
@@ -16,8 +17,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<ProductSection />} />
+            <Route index element={<ChooseUserType />} />
             <Route path="products" element={<ProductSection />} />
+            <Route path="signup" element={<SignUp />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="/vendors/:serviceId" element={<ServiceProviders />} />

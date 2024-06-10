@@ -1,0 +1,27 @@
+.landingpageheader {
+    font-size: 60px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.landingsecondheader {
+    text-align: center;
+    font-size: 25px;
+}
+
+.roles {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.userrole, .provider-role {
+    text-align: center;
+}
+
+.userrole p, .provider-role p {
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
+}

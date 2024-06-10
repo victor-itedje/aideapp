@@ -1,6 +1,7 @@
 import React from "react";
 import "./signup.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [togglePage, setTogglePage] = useState(true);
@@ -99,7 +100,7 @@ const SignUp = () => {
                  <div className="fbdiv"><img src="./facebook.png" alt="" /></div>
                   <div className="applediv" ><img src="./apple.png" alt="" /></div>
                 </div>
-                <p className="userreturn" >Returning user? <span className="bluetext returnuser" ><b>Log in here</b></span></p>
+                <p className="userreturn" >Returning user? <Link to="/signin"><span className="bluetext returnuser" ><b>Log in here</b></span></Link></p>
               </div>
             ) : (
               <div className="secondsection">

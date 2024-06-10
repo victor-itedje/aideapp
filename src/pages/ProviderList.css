@@ -3,6 +3,9 @@
 .provider-list {
   padding: 20px;
   max-width: 800px;
+  /* width: 260px;
+  height: 260px; */
+  border-radius: 100px;
   margin: 0 auto;
 }
 
@@ -21,7 +24,7 @@ ul {
 .provider-card {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 20px;
   padding: 20px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -43,11 +46,20 @@ ul {
   color: #666;
 }
 
+.contactbtns {
+  display: flex;
+  gap: 5px;
+}
+
 .contact-button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  width: 100px;
+  /* padding: 10px 20px; */
+  background-color: #3e3ee0ff;
+  width: fit-content;
+  height: fit-content;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   border: none;
   border-radius: 100px;
