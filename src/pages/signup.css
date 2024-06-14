@@ -373,19 +373,19 @@ input[type= "checkbox"] {
   }
 
   .signupcontents {
-    padding: 30px;
+    padding: 50px;
   }
 
   #mail, #number, #country, #address {
-    width: 90%;
+    width: 95%;
   }
 
   #pwd {
-    width: 90%;
+    width: 95%;
   }
 
   #firstname, #lastname {
-    width: 90%;
+    width: 95%;
   }
 
   button {
