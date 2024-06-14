@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import ServiceProviders from "./pages/vendors";
 import ChooseUserType from "./pages/landingpage";
+import SignUpProvider from "./pages/signupprov";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route index element={<ChooseUserType />} />
             <Route path="products" element={<ProductSection />} />
             <Route path="signup" element={<SignUp />} />
+            <Route path="signupprovider" element={<SignUpProvider />} />
             <Route path="signin" element={<SignIn />} />
             <Route path="cart" element={<CartPage />} />
             <Route path="/vendors/:serviceId" element={<ServiceProviders />} />

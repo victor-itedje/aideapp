@@ -15,10 +15,12 @@ const ChooseUserType = () => {
                 <p>User</p>
                 </div>
                 </Link>
+                <Link to="/signupprovider">
                 <div className="provider-role">
                 <img src="/tools.png" alt="" />
                 <p>Provider</p>
                 </div>
+                </Link>
             </div>
         </div>
         </>

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px; /* Add padding for better layout on small screens */
 }
 
 .s-usercontainer {
@@ -13,7 +14,7 @@
   gap: 96px;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid red; */
+  max-width: 100%; /* Ensure the container doesn't exceed the viewport width */
 }
 
 input {
@@ -28,12 +29,10 @@ input {
 
 .signupcontents {
   background: white;
-  padding-left: 70px;
-  padding-right: 70px;
-  padding-top: 37px;
-  padding-bottom: 37px;
+  padding: 37px 70px; /* Adjusted padding */
   border-radius: 24px;
   box-shadow: 0px 1.5px 1.5px #c3c3c3, 0px 0px 2px #c3c3c3;
+  max-width: 100%; /* Ensure the content doesn't exceed the viewport width */
 }
 
 input {
@@ -52,31 +51,23 @@ input {
 
 #aidelogo {
   margin-bottom: 27px;
+  max-width: 100%; /* Ensure the logo is responsive */
 }
 
-#mail {
+#mail, #number, #country, #address {
   width: 520px;
-}
-
-#number {
-  width: 520px;
-}
-
-#country {
-  width: 520px;
-}
-
-#address {
-  width: 520px;
+  max-width: 100%; /* Ensure the inputs are responsive */
 }
 
 #firstname,
 #lastname {
   width: 231px;
+  max-width: 100%; /* Ensure the inputs are responsive */
 }
 
 #pwd {
   width: 520px;
+  max-width: 100%; /* Ensure the input is responsive */
 }
 
 label {
@@ -99,6 +90,7 @@ label {
 
 button {
   width: 560px;
+  max-width: 100%; /* Ensure the button is responsive */
   height: 52px;
   padding: 0 20px;
   display: flex;
@@ -229,7 +221,7 @@ button:disabled {
 }
 
 .ggldiv {
-background: #FEF1F1FF;
+  background: #FEF1F1FF;
 }
 
 .fbdiv {
@@ -321,21 +313,86 @@ input[type= "checkbox"] {
   flex-direction: column;
 }
 
+@media (max-width: 1200px) {
+  .s-usercontainer {
+    gap: 48px;
+  }
+
+  .lines {
+    width: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .s-usercontainer {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .joinus p {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .joinuspars p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  #mail, #number, #country, #address {
+    width: 400px;
+  }
+
+  #firstname,
+  #lastname {
+    width: 190px;
+  }
+
+  .f-lname {
+    gap: 16px;
+  }
+
+  button {
+    width: 440px;
+  }
+}
 
 @media (max-width: 768px) {
-    .s-usercontainer {
-      flex-direction: column;
-    }
+  .s-usercontainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
 
-    .f-lname {
-      flex-direction: column;
-    }
+  .right-column {
+    display: none;
+  }
 
-    .right-column {
-      display: none;
-    }
+  .f-lname {
+    flex-direction: column;
+  }
 
-    #mail, #country, #number, #address {
-      width: 231px;
-    }
+  .signupcontents {
+    padding: 30px;
+  }
+
+  #mail, #number, #country, #address {
+    width: 90%;
+  }
+
+  #pwd {
+    width: 90%;
+  }
+
+  #firstname, #lastname {
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .lines {
+    width: 100%;
+  }
 }
