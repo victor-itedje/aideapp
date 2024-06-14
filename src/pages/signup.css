@@ -1,5 +1,5 @@
 .s-userwrapper {
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,6 +64,7 @@ input {
   width: 231px;
   max-width: 100%; /* Ensure the inputs are responsive */
 }
+
 
 #pwd {
   width: 520px;
@@ -373,19 +374,19 @@ input[type= "checkbox"] {
   }
 
   .signupcontents {
-    padding: 50px;
+    padding: 20px;
   }
 
   #mail, #number, #country, #address {
-    width: 95%;
+    width: 400px;
   }
 
   #pwd {
-    width: 95%;
+    width: 400px;
   }
 
   #firstname, #lastname {
-    width: 95%;
+    width: 400px;
   }
 
   button {
